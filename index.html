@@ -11,8 +11,8 @@
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
     <body>
-        <div class="container" id="contain">
-            <h1 class="page-header">SCIENTIFIC CALCULATOR</h1>
+        <div class="container" id="contain" >
+            <h1 class="page-header">Scientific Calculator</h1>
             <div id="statement"></div>
             <div id="result"></div>
             <table div id="btns" class="table table-bordered">
@@ -39,13 +39,13 @@
                         <button type="button" id="btnbackspace" class="btn btn-danger">&#8592;</button>
                     </td>
                     <td>
-                        <button type="button" id="btn+/-">+/-</button>
+                        <button type="button" id="btn+/-" class="btn btn-danger">+/-</button>
                     </td>
                     <td>
                         <button id="btnroot">&#8730;</button>
                     </td>
-                    <td class="clear" rowspan="2">
-                        <button id="btnClr">C</button>
+                    <td rowspan="2" class="clr">
+                        <button id="btnClr" class="btn btn-danger">C</button>
                     </td>
                 </tr>
                 <tr>
@@ -126,10 +126,10 @@
                         <button id="btntan-1">tan<sup>-1</sup></button>
                     </td>
                     <td>
-                        <button id="btnnP2"><sup>n</sup>P<sub>2</sub></button>
+                        <button id="btnxPy"><sup>x</sup>P<sub>y</sub></button>
                     </td>
                     <td>
-                        <button id="btnnC2"><sup>n</sup>C<sub>2</sub></button>
+                        <button id="btnxCy"><sup>x</sup>C<sub>y</sub></button>
                     </td>
                     <td>
                         <button id="btn1/x">1/x</button>
@@ -146,8 +146,8 @@
                     <td>
                         <button id="btnSub">-</button>
                     </td>
-                    <td rowspan="2">
-                        <button id="btnEql">=</button>
+                    <td rowspan="2" class="clr">
+                        <button id="btnEql"class="btn btn-success">=</button>
                     </td>
                 </tr>
                 <tr>
@@ -169,17 +169,18 @@
                     <td>
                         <button id="btnex">e<sup>x</sup></button>
                     </td>
-                    <td colspan="2" rowspan="2">
+                    <td colspan="2">
                         <button id="btn0">0</button>
                     </td>
                     <td>
                         <button id="btnPeriod">.</button>
                     </td>
                     <td>
-                        <button id="btnSum">+</button>
+                        <button id="btnSum" >+</button>
                     </td>
                 </tr>
             </table>
         </div>
+        <script type="text/javascript" src="js/calculator.js"></script>
     </body>
 </html>

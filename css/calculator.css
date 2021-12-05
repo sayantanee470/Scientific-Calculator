@@ -1,7 +1,9 @@
 #contain{
     text-align: center;
     border-style: solid;
+    border-color: #5cd4ff;
     margin: 5%;
+    background-color: azure;
 }
 td{
     text-align: justify;
@@ -10,33 +12,36 @@ td{
 button{
     width: 100%;
     height: 100%;
-    display: inline-block;
-}
-.clear{
-    position: relative;
-    height: 100%;
-}
-#btnclear{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    left: 0;
+    box-shadow: 2px 3px 2px rgba(0,0,0,.2);
 }
 
 #result{
     border:solid;
-    border-color: aqua;
+    border-color: #5cd4ff;
     height:50px;
     font-size:20px;
     margin-bottom: 10px;
     text-align: right;
+    padding: .5%;
 }
 #statement{
     border:solid;
-    border-color: aqua;
+    border-color: #5cd4ff;
     height:50px;
     font-size:20px;
     margin-bottom: 10px;
     text-align: right;
+    padding: .5%;
+}
+td.clr, td.clr{
+    position: relative;
+}
+
+#btnClr, #btnEql{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+
 }

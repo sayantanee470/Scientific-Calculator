@@ -25,11 +25,17 @@ document.getElementById("btnMod").onclick=expression;
 document.getElementById("btnDiv").onclick=expression;
 document.getElementById("btnPeriod").onclick=expression;
 document.getElementById("btnExp").onclick=expression;
+document.getElementById("btnxPy").onclick=expression;
+document.getElementById("btnxCy").onclick=expression;
 function expression(e){
     var btn =e.target;
     if(btn.id=="btnExp")
         s.innerHTML+="E";
-    else 
+    else if(btn.id=="btnxPy")
+        s.innerHTML+="P";
+    else if(btn.id=="btnxCy")
+        s.innerHTML+="C";
+    else
         s.innerHTML+=document.getElementById(btn.id).innerHTML;
 }
 document.getElementById("btnClr").onclick=function(){
@@ -38,9 +44,23 @@ document.getElementById("btnClr").onclick=function(){
 }
 document.getElementById("btnEql").onclick=function(){
     var x=s.innerHTML.search("E");
+    var y=s.innerHTML.search("C");
+    var z=s.innerHTML.search("P");
     if(x!=-1)
     {
         r.innerHTML=eval(s.innerHTML.substring(0,x)+"*"+(Math.pow(10,eval(s.innerHTML.substring(x+1)))).toString());
+    }
+    if(y!=-1)
+    {
+        var a=eval(s.innerHTML.substring(0,y));
+        var b=eval(s.innerHTML.substring(y+1));
+        r.innerHTML=factorial(a)/(factorial(a-b)*factorial(b));
+    }
+    if(z!=-1)
+    {
+        var a=eval(s.innerHTML.substring(0,z));
+        var b=eval(s.innerHTML.substring(z+1));
+        r.innerHTML=factorial(a)/factorial(a-b);
     }
     else
         r.innerHTML=eval(s.innerHTML);
@@ -61,8 +81,8 @@ document.getElementById("btnbackspace").onclick=function(){
     s.innerHTML = s.innerHTML.substring(0, s.innerHTML.length - 1);
 };
 document.getElementById("btn+/-").onclick=function(){
-    var x = r.innerHTML;
-    r.innerHTML = "-("+x+")";
+    var x = s.innerHTML;
+    r.innerHTML = eval("-("+x+")");
     s.innerHTML = s.innerHTML.substring(0, s.innerHTML.length - x.length);
     s.innerHTML+= r.innerHTML;
 }
@@ -142,4 +162,28 @@ function factorial(n){
 document.getElementById("btnn!").onclick=function(){
     r.innerHTML=factorial(eval(s.innerHTML));
     s.innerHTML="("+s.innerHTML+")!";
+}
+document.getElementById("btncuberoot").onclick=function(){
+    r.innerHTML=Math.pow(eval(s.innerHTML),1/3);
+    s.innerHTML="cuberoot("+s.innerHTML+")";
+}
+document.getElementById("btncube").onclick=function(){
+    r.innerHTML=Math.pow(eval(s.innerHTML),3);
+    s.innerHTML="("+s.innerHTML+")<sup>3</sup>";
+}
+document.getElementById("btnsquare").onclick=function(){
+    r.innerHTML=Math.pow(eval(s.innerHTML),2);
+    s.innerHTML="("+s.innerHTML+")<sup>2</sup>";
+}
+document.getElementById("btnabs").onclick=function(){
+    r.innerHTML=Math.abs(eval(s.innerHTML));
+    s.innerHTML="|"+s.innerHTML+"|";
+}
+document.getElementById("btn10x").onclick=function(){
+    r.innerHTML=Math.pow(10,eval(s.innerHTML));
+    s.innerHTML="10<sup>"+s.innerHTML+"</sup>";
+}
+document.getElementById("btnex").onclick=function(){
+    r.innerHTML=Math.pow(Math.E,eval(s.innerHTML));
+    s.innerHTML="e<sup>"+s.innerHTML+"</sup>";
 }
